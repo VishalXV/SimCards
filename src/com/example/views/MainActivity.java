@@ -1,10 +1,12 @@
-package com.example.simcards;
+package com.example.views;
+
+import com.example.simcards.R;
 
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AbstractMVPActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
