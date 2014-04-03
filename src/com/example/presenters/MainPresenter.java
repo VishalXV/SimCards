@@ -4,12 +4,12 @@ import android.content.Intent;
 import android.view.View;
 
 import com.example.simcards.R;
+import com.example.views.AbstractMVPActivity;
 import com.example.views.HostActivity;
-import com.example.views.MainActivity;
 
 public class MainPresenter extends AbstractMVPPresenter {
     
-    public MainPresenter(MainActivity a) {
+    public MainPresenter(AbstractMVPActivity a) {
         super(a);
     }
 
