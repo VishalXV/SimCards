@@ -1,5 +1,5 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item android:id="@+id/scan_devices" 
+    <item android:id="@+id/bluetoothHost_menu_scanDevices" 
         android:title="Connect"
         android:icon="@android:drawable/ic_menu_search" 
         android:showAsAction="ifRoom|withText"></item>

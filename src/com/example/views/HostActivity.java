@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 
 public class HostActivity extends AbstractMVPBluetoothActivity {
 
@@ -29,6 +30,16 @@ public class HostActivity extends AbstractMVPBluetoothActivity {
 		
 		Log.i("BT","Device Responce");
 		
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.bluetoothHost_menu_scanDevices:
+			requestDeviceConnection();
+			return true;
+		}
+		return false;
 	}
 
 }
