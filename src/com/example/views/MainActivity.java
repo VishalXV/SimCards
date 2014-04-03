@@ -9,7 +9,7 @@ import android.view.Menu;
 public class MainActivity extends AbstractMVPActivity {
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 	}
@@ -20,5 +20,11 @@ public class MainActivity extends AbstractMVPActivity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+
+    @Override
+    public void onDeviceResponse(boolean success) {
+        // TODO Auto-generated method stub
+        
+    }
 
 }
