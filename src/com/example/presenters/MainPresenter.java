@@ -1,5 +1,6 @@
 package com.example.presenters;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
 
@@ -9,7 +10,7 @@ import com.example.views.HostActivity;
 
 public class MainPresenter extends AbstractMVPPresenter {
     
-    public MainPresenter(AbstractMVPActivity a) {
+    public MainPresenter(Activity a) {
         super(a);
     }
 

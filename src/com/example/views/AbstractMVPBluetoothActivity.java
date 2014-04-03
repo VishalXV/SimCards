@@ -7,7 +7,7 @@ import com.kinvey.android.activities.BaseRemoteActivity;
 
 public abstract class AbstractMVPBluetoothActivity extends BaseRemoteActivity {
     
-    private AbstractMVPPresenter presenter;
+    protected AbstractMVPPresenter presenter;
     
     public void onClick(View v) {
         presenter.onClick(v);
