@@ -21,10 +21,4 @@ public class MainActivity extends AbstractMVPActivity {
 		return true;
 	}
 
-    @Override
-    public void onDeviceResponse(boolean success) {
-        // TODO Auto-generated method stub
-        
-    }
-
 }

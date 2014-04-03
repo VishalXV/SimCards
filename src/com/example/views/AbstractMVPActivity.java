@@ -1,11 +1,11 @@
 package com.example.views;
 
+import android.app.Activity;
 import android.view.View;
 
 import com.example.presenters.AbstractMVPPresenter;
-import com.kinvey.android.activities.BaseRemoteActivity;
 
-public abstract class AbstractMVPActivity extends BaseRemoteActivity {
+public abstract class AbstractMVPActivity extends Activity {
 	
 	private AbstractMVPPresenter presenter;
 	
