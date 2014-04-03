@@ -1,16 +1,16 @@
 package com.example.presenters;
 
+import android.app.Activity;
 import android.view.View;
 
 import com.example.views.AbstractMVPActivity;
 
 public abstract class AbstractMVPPresenter {
 	
-	protected AbstractMVPActivity activity;
+	protected Activity activity;
 	
-	public AbstractMVPPresenter(AbstractMVPActivity activity) {
-		this.activity = activity;
-		activity.linkPresenter(this);
+	public AbstractMVPPresenter(Activity activity) {
+	    this.activity = activity;
 	}
 	/**
 	 * 
