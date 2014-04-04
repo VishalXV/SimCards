@@ -36,6 +36,7 @@ public class HostActivity extends AbstractMVPBluetoothActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.bluetoothHost_menu_scanDevices:
+			Log.i("BT","Pressed connect device");
 			requestDeviceConnection();
 			return true;
 		}
