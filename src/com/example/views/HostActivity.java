@@ -1,14 +1,13 @@
 package com.example.views;
 
-import com.example.simcards.R;
-import com.example.simcards.R.layout;
-import com.example.simcards.R.menu;
-
 import android.os.Bundle;
-import android.app.Activity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+
+import com.example.simcards.R;
 
 public class HostActivity extends AbstractMVPBluetoothActivity {
 
@@ -25,12 +24,39 @@ public class HostActivity extends AbstractMVPBluetoothActivity {
 		return true;
 	}
 
-	@Override
+
 	public void onDeviceResponse(boolean success) {
 		
 		Log.i("BT","Device Responce");
 		
 	}
+	public void onClick(View v){
+		
+		TextView inputBox = (TextView) findViewById(R.id.host_editText_message);
+		if (inputBox.getText().toString()!=null){
+			
+			sendMessage(inputBox.getText().toString());
+			
+		}
+		
+	}
+	
+	public void onWriteSuccess(String message){
+		
+		super.onWriteSuccess(message);
+		//Log.i("BT","Send success");
+		TextView inputBox = (TextView) findViewById(R.id.host_editText_message);
+		inputBox.setText("");
+		
+	}
+	
+	public void onNewMessage(String message){
+		
+		TextView messagelist = (TextView) findViewById(R.id.host_textView_messageBox);
+		messagelist.append("\n"+message);
+		
+	}
+	
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {

@@ -8,9 +8,34 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".HostActivity" >
 
-    <TextView
+    <EditText
+        android:id="@+id/host_editText_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:ems="10"
+        android:hint="Enter Something" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/host_button_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/host_editText_message"
+        android:layout_alignBottom="@+id/host_editText_message"
+        android:layout_alignParentRight="true"
+        android:onClick="onClick"
+        android:text="Send" />
+
+    <TextView
+        android:id="@+id/host_textView_messageBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/host_button_send"
+        android:text=" " />
 
 </RelativeLayout>

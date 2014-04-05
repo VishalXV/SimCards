@@ -3,9 +3,9 @@ package com.example.views;
 import android.view.View;
 
 import com.example.presenters.AbstractMVPPresenter;
-import com.kinvey.android.activities.BaseRemoteActivity;
+import com.kinvey.android.activities.BaseConnectActivity;
 
-public abstract class AbstractMVPBluetoothActivity extends BaseRemoteActivity {
+public abstract class AbstractMVPBluetoothActivity extends BaseConnectActivity {
     
     protected AbstractMVPPresenter presenter;
     
