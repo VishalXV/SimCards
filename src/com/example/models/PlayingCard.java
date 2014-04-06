@@ -61,7 +61,6 @@ public class PlayingCard extends Card {
         imageIds.add(R.drawable.card_24);
         imageIds.add(R.drawable.card_25);
         imageIds.add(R.drawable.card_26);
-        //start here
         imageIds.add(R.drawable.card_27);
         imageIds.add(R.drawable.card_28);
         imageIds.add(R.drawable.card_29);

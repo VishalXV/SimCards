@@ -27,7 +27,7 @@ public class HostActivity extends AbstractMVPBluetoothActivity {
 
 	public void onDeviceResponse(boolean success) {
 		
-		Log.i("BT","Device Responce");
+		Log.i("BT","Device Response");
 		
 	}
 	public void onClick(View v){
