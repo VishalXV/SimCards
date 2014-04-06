@@ -35,5 +35,14 @@ public abstract class Move implements Serializable {
     public Player getPlayer() {
         return player;
     }
+    
+    @Override
+    public boolean equals(Object o) {
+        Move other = (Move) o;
+        boolean playerEquality = this.player.equals(other.player);
+        boolean moveTypeEquality = this.moveType == other.moveType;
+        boolean affectedCardsEquality = this.affectedCards.equals(other.affectedCards);
+        return playerEquality && moveTypeEquality && affectedCardsEquality;
+    }
 
 }

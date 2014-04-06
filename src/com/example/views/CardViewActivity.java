@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.Toast;
 
@@ -31,7 +32,7 @@ public class CardViewActivity extends AbstractMVPBluetoothActivity {
 	@Override
 	public void onNewMessage(String message) {
 		Log.i("CardView", "New message recieved"+message);
-		
+		presenter.onNewMessage(message);
 	}
 	
 	 @Override
@@ -52,7 +53,7 @@ public class CardViewActivity extends AbstractMVPBluetoothActivity {
 		getCardGrid().setOnItemClickListener(o);
 	}
 	 
-	 public class OnItemClickListenerListViewItem implements OnItemClickListener {
+	public class OnItemClickListenerListViewItem implements OnItemClickListener {
 
 		    @Override
 		    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -70,7 +71,28 @@ public class CardViewActivity extends AbstractMVPBluetoothActivity {
 
 		    }
 
-	 }  
+	}
+	
+	public void disablePlay() {
+        Button button = (Button) findViewById(R.id.cardView_button_play);
+        button.setEnabled(false);
+    }
+    
+	public void disableCallBluff() {
+        Button button = (Button) findViewById(R.id.cardView_button_callBluff);
+        button.setEnabled(false);
+    }
+    
+	public void disablePass() {
+        Button button = (Button) findViewById(R.id.cardView_button_pass);
+        button.setEnabled(false);
+    }
+	
+	public void sendMessage(String message) {
+	    super.sendMessage(message);
+	}
+    
+    
 	 
 	    
 }

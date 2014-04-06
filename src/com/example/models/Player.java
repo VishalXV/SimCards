@@ -54,5 +54,12 @@ public class Player implements Serializable {
         return hand;
     }
     
+    @Override
+    public boolean equals(Object o) {
+        Player other = (Player) o;
+        boolean pointEquality = (this.points == other.points);
+        boolean handEquality = (this.hand.equals(other.hand));
+        return handEquality && pointEquality;
+    }
 
 }

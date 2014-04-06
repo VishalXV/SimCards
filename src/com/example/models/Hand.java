@@ -36,5 +36,10 @@ public class Hand implements Serializable {
     public boolean isEmpty() {
         return hand.isEmpty();
     }
+    
+    public boolean equals(Object o) {
+        Hand other = (Hand) o;
+        return hand.equals(other.hand);
+    }
 
 }

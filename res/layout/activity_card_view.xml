@@ -23,10 +23,38 @@
                 android:layout_height="match_parent"
                 android:layout_width="0dp" 
                 android:layout_weight=".5"/>
-            <Button
+            <RelativeLayout
                 android:layout_height="match_parent"
                 android:layout_width="0dp"
-                android:layout_weight=".5"/>
+                android:layout_weight=".5">
+                <Button 
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:text="Play"
+                    android:id="@+id/cardView_button_play"
+                    android:onClick="onClick"
+                    />
+
+                <Button
+                    android:id="@+id/cardView_button_callBluff"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/cardView_button_play"
+                    android:onClick="onClick"
+                    android:text="Call Bluff" />
+
+                <Button
+                    android:id="@+id/cardView_button_pass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/cardView_button_callBluff"
+                    android:onClick="onClick"
+                    android:text="Pass" />
+
+            </RelativeLayout>
         </LinearLayout>
 
         <RelativeLayout
