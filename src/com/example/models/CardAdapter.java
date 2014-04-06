@@ -1,4 +1,4 @@
-package com.example.views;
+package com.example.models;
 
 import java.util.ArrayList;
 
@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 
-import com.example.models.Card;
 import com.example.simcards.R;
 
 public class CardAdapter extends ArrayAdapter<Card> {
@@ -46,10 +45,15 @@ public class CardAdapter extends ArrayAdapter<Card> {
 
         // get the TextView and then set the text (item name) and tag (item ID) values
         ImageView imageViewItem = (ImageView) convertView.findViewById(R.id.cardViewItem);
-        imageViewItem.setImageResource(card.getImageID());
+        imageViewItem.setImageResource(card.getImageId());
 
         return convertView;
 
+    }
+    
+    public Card getItem(int position){
+    	
+    	return list.get(position);
     }
     
 }

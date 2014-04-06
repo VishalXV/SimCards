@@ -2,26 +2,32 @@ package com.example.models;
 
 import java.io.Serializable;
 
+import android.util.Log;
+
+import com.example.simcards.R;
+
 public abstract class Card implements Comparable<Card>, Serializable {
     
     protected int rank;
     protected int suit;
-    protected int imageID;
+    protected int imageId;
+    
     
     public Card(int rank, int suit) {
         this(rank, suit, 0);
     }
     
-    public Card(int rank, int suit, int imageID) {
+    public Card(int rank, int suit, int imageId) {
         this.rank = rank;
         this.suit = suit;
-        this.imageID = imageID;
+        this.imageId = imageId;
     }
 
     /**
      * @return the rank
      */
     public int getRank() {
+    	Log.i("Lgo"," "+this.rank);
         return rank;
     }
 
@@ -46,8 +52,8 @@ public abstract class Card implements Comparable<Card>, Serializable {
         this.suit = suit;
     }
     
-    public int getImageID() {
-        return imageID;
+    public int getImageId(){
+    	return this.imageId;
     }
     
     
