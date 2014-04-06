@@ -56,6 +56,10 @@ public abstract class Card implements Comparable<Card>, Serializable {
     	return this.imageId;
     }
     
+    public void setImageId(int imageId) {
+        this.imageId = imageId;
+    }
+    
     public boolean equals(Object o) {
         Card other = (Card) o;
         boolean rankEquality = this.rank == other.rank;

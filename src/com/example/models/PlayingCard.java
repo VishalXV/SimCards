@@ -1,5 +1,9 @@
 package com.example.models;
 
+import java.util.ArrayList;
+
+import com.example.simcards.R;
+
 public class PlayingCard extends Card {
     
     /**
@@ -26,6 +30,60 @@ public class PlayingCard extends Card {
     public static final int RANK_QUEEN = 12;
     public static final int RANK_KING = 13;
     public static final int RANK_ACE = 14;
+    
+    public static ArrayList<Integer> imageIds;
+    
+    static {
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        //start here
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+        imageIds.add(R.drawable.card_1);
+    }
     
     public PlayingCard(int suit, int rank) {
         super(suit, rank);

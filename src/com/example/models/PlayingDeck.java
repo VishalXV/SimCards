@@ -3,6 +3,8 @@ package com.example.models;
 import java.util.ArrayList;
 import java.util.Random;
 
+import com.example.simcards.R;
+
 /**
  * This class represents a standard playing deck of 52 cards without jokers
  * @author Vishal
