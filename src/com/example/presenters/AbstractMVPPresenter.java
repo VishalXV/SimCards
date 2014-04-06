@@ -11,6 +11,7 @@ public abstract class AbstractMVPPresenter {
 	
 	public AbstractMVPPresenter(Activity activity) {
 	    this.activity = activity;
+	    
 	}
 	/**
 	 * 

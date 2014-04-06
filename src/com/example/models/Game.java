@@ -16,6 +16,7 @@ public abstract class Game {
         piles = new ArrayList<Pile>();
         moves = new Stack<Move>();
         deck = new PlayingDeck();
+        players = new ArrayList<Player>();
         ArrayList<Hand> hands = deck.deal(numPlayers);
         for(int i = 0; i < hands.size(); i++) {
             Player player = new Player(hands.get(i));

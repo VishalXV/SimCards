@@ -41,14 +41,17 @@ public class CardViewActivity extends AbstractMVPBluetoothActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_view);
-        presenter = new CardViewPresenter(this);
-        Hand testHand = new Hand();
         selected = new ArrayList<Card>();
-        testHand.addCard(new PlayingCard(PlayingCard.RANK_TWO,PlayingCard.SUIT_DIAMOND));
-        testHand.addCard(new PlayingCard(PlayingCard.RANK_THREE,PlayingCard.SUIT_CLUB));
-        testHand.addCard(new PlayingCard(PlayingCard.RANK_FOUR,PlayingCard.SUIT_DIAMOND));
-        testHand.addCard(new PlayingCard(PlayingCard.RANK_FIVE,PlayingCard.SUIT_HEART));
-        setCardAdapter(testHand.getArrayList());
+        for(Integer i: PlayingCard.imageIds) {
+            Log.i("imageId Print", "" + i);
+        }
+        presenter = new CardViewPresenter(this);
+        Hand hand = presenter.getHand();
+        setCardAdapter(hand.getArrayList());
+//        Hand testHand = new Hand();
+//        testHand.addCard(new PlayingCard(PlayingCard.RANK_ACE, PlayingCard.SUIT_SPADE));
+//        testHand.addCard(new PlayingCard(PlayingCard.RANK_KING, PlayingCard.SUIT_SPADE));
+//        setCardAdapter(testHand.getArrayList());
         setOnItemClickListener(new OnItemClickListenerListViewItem());
 	 }
 	 
@@ -63,6 +66,9 @@ public class CardViewActivity extends AbstractMVPBluetoothActivity {
 	}
 	public ArrayList<Card> getSelectedCards(){
 		return selected;
+	}
+	public void clearSelectedCards() {
+	    selected = new ArrayList<Card>();
 	}
 	 
 	public class OnItemClickListenerListViewItem implements OnItemClickListener {

@@ -29,7 +29,7 @@ public class BluffGame extends Game {
         } else if (moveType == BluffMove.MOVE_PLAY) {
             ArrayList<Card> cards = move.getCards();
             if(state == STATE_START) {
-                trueCard = cards.get(0);
+                trueCard = move.getCards().get(0);
                 starter = move.getPlayer();
             }
             for (int i = 0; i < cards.size(); i++) {

@@ -14,7 +14,7 @@ public abstract class Card implements Comparable<Card>, Serializable {
     public Card(int rank, int suit) {
         int calc = (rank-2) * 4 + suit;
         int imageId=PlayingCard.imageIds.get(calc);
-        Log.i("ImageIds",""+imageId);
+        Log.i("ImageIds","Rank:" + rank + ", Suit: "+ suit + ", Calc: "+ calc + ", ID: " + imageId);
         this.rank=rank;
         this.suit=suit;
         this.imageId=imageId;

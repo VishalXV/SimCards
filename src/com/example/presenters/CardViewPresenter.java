@@ -9,12 +9,15 @@ import java.io.StreamCorruptedException;
 
 import android.app.Activity;
 import android.view.View;
+import android.widget.BaseAdapter;
 
 import com.example.models.BluffGame;
 import com.example.models.BluffMove;
-import com.example.models.Move;
+import com.example.models.Card;
+import com.example.models.Hand;
 import com.example.models.Player;
 import com.example.simcards.R;
+import com.example.views.AbstractMVPBluetoothActivity;
 import com.example.views.CardViewActivity;
 
 public class CardViewPresenter extends AbstractMVPPresenter {
@@ -24,6 +27,9 @@ public class CardViewPresenter extends AbstractMVPPresenter {
     
 	public CardViewPresenter(Activity activity) {
 		super(activity);
+		((AbstractMVPBluetoothActivity)activity).linkPresenter(this);
+		game = new BluffGame(2);
+		current = game.getPlayers().get(0);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -42,24 +48,43 @@ public class CardViewPresenter extends AbstractMVPPresenter {
 
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
-		
+		CardViewActivity a = (CardViewActivity) activity;
+		a.clearSelectedCards();
+		((BaseAdapter)a.getCardGrid().getAdapter()).notifyDataSetChanged();
+		//disable and enable buttons
+		if(game.validMove(BluffMove.MOVE_PLAY)) {
+		   a. disablePlay();
+		} 
+		if(game.validMove(BluffMove.MOVE_PASS)) {
+		    a.disablePass();
+		}
+		if(game.validMove(BluffMove.MOVE_BLUFF)) {
+		    a.disableCallBluff();
+		}
 	}
 	
 	public void play() {
-	    
+	    BluffMove move = new BluffMove(current, BluffMove.MOVE_PLAY);
+	    for(Card c : ((CardViewActivity) activity).getSelectedCards()) {
+	        move.addCard(c);
+	    }
+	    //sendMove(move);
+	    game.processMove(move);
+	    update();
 	}
 	
 	public void callBluff() {
-	    BluffMove move = new BluffMove(current, BluffMove.MOVE_PASS);
-	    sendMove(move);
+	    BluffMove move = new BluffMove(current, BluffMove.MOVE_BLUFF);
+	    //sendMove(move);
 	    game.processMove(move);
+	    update();
 	}
 	
 	public void pass() {
 	    BluffMove move = new BluffMove(current, BluffMove.MOVE_PASS);
-	    sendMove(move);
+	    //sendMove(move);
 	    game.processMove(move);
+	    update();
 	}
 	
 	public void onNewMessage(String message) {
@@ -103,6 +128,10 @@ public class CardViewPresenter extends AbstractMVPPresenter {
 	
 	public void sendMove(BluffMove move) {
         ((CardViewActivity)activity).sendMessage(new String(serialize(move)));
+	}
+	
+	public Hand getHand() {
+	    return current.getHand();
 	}
 
 }

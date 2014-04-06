@@ -3,7 +3,7 @@ package com.example.models;
 import java.util.ArrayList;
 import java.util.Random;
 
-import com.example.simcards.R;
+import android.util.Log;
 
 /**
  * This class represents a standard playing deck of 52 cards without jokers
@@ -21,8 +21,8 @@ public class PlayingDeck {
         for(int i = 0; i < 13; i++) {
             for(int j = 0; j < 4; j++) {
                 int index = i * 4 + j;
-                PlayingCard card = new PlayingCard(PlayingCard.RANK_TWO + i, PlayingCard.SUIT_CLUB + i);
-                card.setImageId(PlayingCard.imageIds.get(index));
+                Log.i("Deck", "" + index);
+                PlayingCard card = new PlayingCard(PlayingCard.RANK_TWO + i, PlayingCard.SUIT_CLUB + j);
                 deck.add(card);
             }
         }
