@@ -6,6 +6,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -35,6 +36,16 @@ public class CardViewActivity extends AbstractMVPBluetoothActivity {
 	public void onNewMessage(String message) {
 		Log.i("CardView", "New message recieved"+message);
 		presenter.onNewMessage(message);
+	}
+	
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.bluetoothHost_menu_scanDevices:
+			Log.i("BT","Pressed connect device");
+			requestDeviceConnection();
+			return true;
+		}
+		return false;
 	}
 	
 	 @Override
