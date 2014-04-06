@@ -118,6 +118,11 @@ public class CardViewActivity extends AbstractMVPBluetoothActivity {
         Button button = (Button) findViewById(R.id.cardView_button_play);
         button.setEnabled(false);
     }
+	
+	public void enable(int buttonId, boolean enabled) {
+	    Button button = (Button) findViewById(buttonId);
+	    button.setEnabled(enabled);
+	}
     
 	public void disableCallBluff() {
         Button button = (Button) findViewById(R.id.cardView_button_callBluff);

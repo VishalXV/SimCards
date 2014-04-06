@@ -52,15 +52,9 @@ public class CardViewPresenter extends AbstractMVPPresenter {
 		a.clearSelectedCards();
 		((BaseAdapter)a.getCardGrid().getAdapter()).notifyDataSetChanged();
 		//disable and enable buttons
-		if(game.validMove(BluffMove.MOVE_PLAY)) {
-		   a. disablePlay();
-		} 
-		if(game.validMove(BluffMove.MOVE_PASS)) {
-		    a.disablePass();
-		}
-		if(game.validMove(BluffMove.MOVE_BLUFF)) {
-		    a.disableCallBluff();
-		}
+		a.enable(R.id.cardView_button_play, game.validMove(BluffMove.MOVE_PLAY));
+		a.enable(R.id.cardView_button_pass, game.validMove(BluffMove.MOVE_PASS));
+		a.enable(R.id.cardView_button_callBluff, game.validMove(BluffMove.MOVE_BLUFF));
 	}
 	
 	public void play() {
