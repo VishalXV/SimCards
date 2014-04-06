@@ -36,5 +36,10 @@ public class Hand implements Serializable {
     public boolean isEmpty() {
         return hand.isEmpty();
     }
+    public ArrayList<Card> getArrayList(){
+    	
+    	return this.hand;
+    	
+    }
 
 }

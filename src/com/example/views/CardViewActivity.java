@@ -14,13 +14,15 @@ import android.widget.Toast;
 
 import com.example.models.Card;
 import com.example.models.CardAdapter;
+import com.example.models.Hand;
+import com.example.models.PlayingCard;
 import com.example.presenters.CardViewPresenter;
 import com.example.simcards.R;
 
 public class CardViewActivity extends AbstractMVPBluetoothActivity {
 
 	CardViewPresenter presenter;
-	
+	ArrayList<Card> selected;
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -39,8 +41,15 @@ public class CardViewActivity extends AbstractMVPBluetoothActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_view);
         presenter = new CardViewPresenter(this);
-        
-    }
+        Hand testHand = new Hand();
+        selected = new ArrayList<Card>();
+        testHand.addCard(new PlayingCard(PlayingCard.RANK_TWO,PlayingCard.SUIT_DIAMOND));
+        testHand.addCard(new PlayingCard(PlayingCard.RANK_THREE,PlayingCard.SUIT_CLUB));
+        testHand.addCard(new PlayingCard(PlayingCard.RANK_FOUR,PlayingCard.SUIT_DIAMOND));
+        testHand.addCard(new PlayingCard(PlayingCard.RANK_KING,PlayingCard.SUIT_HEART));
+        setCardAdapter(testHand.getArrayList());
+        setOnItemClickListener(new OnItemClickListenerListViewItem());
+	 }
 	 
 	public GridView getCardGrid() {
 		return (GridView) findViewById(R.id.card_grid);
@@ -51,6 +60,9 @@ public class CardViewActivity extends AbstractMVPBluetoothActivity {
 	public void setOnItemClickListener(OnItemClickListener o) {
 		getCardGrid().setOnItemClickListener(o);
 	}
+	public ArrayList<Card> getSelectedCards(){
+		return selected;
+	}
 	 
 	 public class OnItemClickListenerListViewItem implements OnItemClickListener {
 
@@ -58,19 +70,35 @@ public class CardViewActivity extends AbstractMVPBluetoothActivity {
 		    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
 		        Context context = view.getContext();
-
+		        
 
 		        Card c = (Card) parent.getAdapter().getItem(position);
-
+		        if (selected.contains(c))
+		        {
+		        	selected.remove(c);
+		        	view.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+		        	
+		        }else{
+		        	
+		        	selected.add(c);
+		        	view.setBackgroundResource(R.drawable.transparency);
+		        	
+		        }
+		        Log.i("Lgo","Size:"+selected.size());
 
 		        // just toast it
-		        Toast.makeText(context, "Item: " + c.toString() , Toast.LENGTH_SHORT).show();
+		        //Toast.makeText(context, "Item: " + c.toString() , Toast.LENGTH_SHORT).show();
 
 		        //((MainActivity) context).alertDialogStores.cancel();
 
 		    }
 
-	 }  
+	 }
+	
+	
+	 
+	 
+	 
 	 
 	    
 }
