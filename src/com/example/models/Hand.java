@@ -33,5 +33,8 @@ public class Hand implements Serializable {
         }
         throw new IllegalArgumentException();
     }
+    public boolean isEmpty() {
+        return hand.isEmpty();
+    }
 
 }

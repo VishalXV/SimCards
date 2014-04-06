@@ -5,10 +5,10 @@ public class PlayingCard extends Card {
     /**
      * Suit constants
      */
-    public static final int SUIT_CLUB = 1;
-    public static final int SUIT_DIAMOND = 2;
-    public static final int SUIT_HEART = 3;
-    public static final int SUIT_SPADE = 4;
+    public static final int SUIT_CLUB = 0;
+    public static final int SUIT_DIAMOND = 1;
+    public static final int SUIT_HEART = 2;
+    public static final int SUIT_SPADE = 3;
     
     private int suit;
     

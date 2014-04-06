@@ -39,6 +39,9 @@ public class BluffGame extends Game {
         } else if(moveType == BluffMove.MOVE_PASS) {
             //do nothing
         }
+        if(checkWinner(move)) {
+            winner = move.getPlayer();
+        }
         moves.add(move);
     }
 
@@ -61,6 +64,14 @@ public class BluffGame extends Game {
         } else {
             return false;
         }
+        
     }
+    
+    public boolean checkWinner(Player p) {
+        return p.getHand().isEmpty();
+    }
+    
+    
 
+    
 }

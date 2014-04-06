@@ -6,10 +6,16 @@ public abstract class Card implements Comparable<Card>, Serializable {
     
     protected int rank;
     protected int suit;
+    protected int imageID;
     
     public Card(int rank, int suit) {
+        this(rank, suit, 0);
+    }
+    
+    public Card(int rank, int suit, int imageID) {
         this.rank = rank;
         this.suit = suit;
+        this.imageID = imageID;
     }
 
     /**
@@ -38,6 +44,10 @@ public abstract class Card implements Comparable<Card>, Serializable {
      */
     public void setSuit(int suit) {
         this.suit = suit;
+    }
+    
+    public int getImageID() {
+        return imageID;
     }
     
     

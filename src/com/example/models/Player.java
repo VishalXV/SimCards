@@ -50,8 +50,9 @@ public class Player implements Serializable {
         this.hand = hand;
     }
     
-    public Hand getHand(Hand hand) {
+    public Hand getHand() {
         return hand;
     }
+    
 
 }

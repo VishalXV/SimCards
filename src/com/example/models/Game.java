@@ -6,10 +6,11 @@ import java.util.Stack;
 public abstract class Game {
 
     protected ArrayList<Player> players;
-    protected ArrayList<Pile>   piles;
+    protected ArrayList<Pile> piles;
     protected Stack<Move> moves;
     protected PlayingDeck deck;
     protected int state;
+    protected Player winner;
     
     public Game(int numPlayers, int state) {
         piles = new ArrayList<Pile>();
@@ -23,6 +24,10 @@ public abstract class Game {
         
     }
     
+    public ArrayList<Player> getPlayers() {
+        return players;
+    }
+    
     public int getState() {
         return state;
     }
@@ -34,6 +39,16 @@ public abstract class Game {
     public abstract void processMove(Move move);
 
     public abstract boolean validMove(int moveType);
+    
+    public abstract boolean checkWinner(Player p);
+    
+    public boolean isDone() {
+        return winner != null;
+    }
+    
+    public Player getWinner() {
+        return winner;
+    }
     
     protected void transfer(ArrayList<Card> sourceCards, ArrayList<Card> destCards) {
         for(int i = 0; !sourceCards.isEmpty(); i++) {
@@ -49,4 +64,7 @@ public abstract class Game {
         destination.addCards(source.removeCards(numCards));
     }
     
+    public boolean checkWinner(Move move) {
+        return checkWinner(move.getPlayer());
+    }
 }
