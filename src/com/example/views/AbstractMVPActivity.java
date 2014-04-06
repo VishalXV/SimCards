@@ -21,8 +21,8 @@ public abstract class AbstractMVPActivity extends Activity {
 	public void onClick(View v) {
 	    String buttonId = v.getResources().getResourceName(v.getId());
 	    Log.i("Taps", buttonId + " was pressed");
-		startActivity(new Intent(this, HostActivity.class));
-	    //presenter.onClick(v);
+		//startActivity(new Intent(this, HostActivity.class));
+	    presenter.onClick(v);
 	}
 	
 	public void linkPresenter(AbstractMVPPresenter presenter) {

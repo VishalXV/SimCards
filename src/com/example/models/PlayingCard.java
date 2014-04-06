@@ -10,8 +10,6 @@ public class PlayingCard extends Card {
     public static final int SUIT_HEART = 3;
     public static final int SUIT_SPADE = 4;
     
-    private int suit;
-    
     /**
      * Rank constants
      */
@@ -28,8 +26,6 @@ public class PlayingCard extends Card {
     public static final int RANK_QUEEN = 12;
     public static final int RANK_KING = 13;
     public static final int RANK_ACE = 14;
-    
-    private int rank;
     
     public PlayingCard(int suit, int rank) {
         super(suit, rank);
@@ -49,12 +45,6 @@ public class PlayingCard extends Card {
         this.suit = suit;
     }
 
-    /**
-     * @return the rank
-     */
-    public int getRank() {
-        return rank;
-    }
 
     /**
      * @param rank the rank to set
