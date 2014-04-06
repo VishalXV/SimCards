@@ -4,8 +4,6 @@ import java.io.Serializable;
 
 import android.util.Log;
 
-import com.example.simcards.R;
-
 public abstract class Card implements Comparable<Card>, Serializable {
     
     protected int rank;
@@ -14,7 +12,12 @@ public abstract class Card implements Comparable<Card>, Serializable {
     
     
     public Card(int rank, int suit) {
-        this(rank, suit, 0);
+        int calc = (rank-2) * 4 + suit;
+        int imageId=PlayingCard.imageIds.get(calc);
+        Log.i("ImageIds",""+imageId);
+        this.rank=rank;
+        this.suit=suit;
+        this.imageId=imageId;
     }
     
     public Card(int rank, int suit, int imageId) {

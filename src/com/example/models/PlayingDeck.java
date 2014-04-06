@@ -11,16 +11,19 @@ import com.example.simcards.R;
  */
 public class PlayingDeck {
     
-    protected ArrayList<PlayingCard> deck;
+    protected ArrayList<Card> deck;
     
     /**
      * Constructs a standard playing deck of 52 cards without jokers
      */
     public PlayingDeck() {
-        deck = new ArrayList<PlayingCard>(52);
+        deck = new ArrayList<Card>(52);
         for(int i = 0; i < 13; i++) {
             for(int j = 0; j < 4; j++) {
+                int index = i * 4 + j;
                 PlayingCard card = new PlayingCard(PlayingCard.RANK_TWO + i, PlayingCard.SUIT_CLUB + i);
+                card.setImageId(PlayingCard.imageIds.get(index));
+                deck.add(card);
             }
         }
     }
@@ -41,7 +44,7 @@ public class PlayingDeck {
      * @return the card removed from the top of the deck
      */
     public PlayingCard draw() {
-        return deck.remove(deck.size() - 1);
+        return (PlayingCard) deck.remove(deck.size() - 1);
     }
     
     public ArrayList<Hand> deal(int numHands) {
@@ -64,9 +67,13 @@ public class PlayingDeck {
      * @param index2 second element to be swapped
      */
     private void swap(int index1, int index2) {
-        PlayingCard temp = deck.get(index2);
+        PlayingCard temp = (PlayingCard) deck.get(index2);
         deck.set(index2, deck.get(index1));
         deck.set(index1, temp);
+    }
+    
+    public ArrayList<Card> getDeck() {
+        return deck;
     }
     
     

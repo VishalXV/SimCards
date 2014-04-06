@@ -11,12 +11,12 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.GridView;
-import android.widget.Toast;
 
 import com.example.models.Card;
 import com.example.models.CardAdapter;
 import com.example.models.Hand;
 import com.example.models.PlayingCard;
+import com.example.models.PlayingDeck;
 import com.example.presenters.CardViewPresenter;
 import com.example.simcards.R;
 
@@ -47,7 +47,7 @@ public class CardViewActivity extends AbstractMVPBluetoothActivity {
         testHand.addCard(new PlayingCard(PlayingCard.RANK_TWO,PlayingCard.SUIT_DIAMOND));
         testHand.addCard(new PlayingCard(PlayingCard.RANK_THREE,PlayingCard.SUIT_CLUB));
         testHand.addCard(new PlayingCard(PlayingCard.RANK_FOUR,PlayingCard.SUIT_DIAMOND));
-        testHand.addCard(new PlayingCard(PlayingCard.RANK_KING,PlayingCard.SUIT_HEART));
+        testHand.addCard(new PlayingCard(PlayingCard.RANK_FIVE,PlayingCard.SUIT_HEART));
         setCardAdapter(testHand.getArrayList());
         setOnItemClickListener(new OnItemClickListenerListViewItem());
 	 }

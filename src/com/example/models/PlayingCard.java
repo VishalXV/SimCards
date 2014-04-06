@@ -34,6 +34,7 @@ public class PlayingCard extends Card {
     public static ArrayList<Integer> imageIds;
     
     static {
+        imageIds = new ArrayList<Integer>();
         imageIds.add(R.drawable.card_1);
         imageIds.add(R.drawable.card_2);
         imageIds.add(R.drawable.card_3);
