@@ -65,29 +65,29 @@ public class PlayingCard extends Card {
         imageIds.add(R.drawable.card_28);
         imageIds.add(R.drawable.card_29);
         imageIds.add(R.drawable.card_30);
-        imageIds.add(R.drawable.card_1);
-        imageIds.add(R.drawable.card_1);
-        imageIds.add(R.drawable.card_1);
-        imageIds.add(R.drawable.card_1);
-        imageIds.add(R.drawable.card_1);
-        imageIds.add(R.drawable.card_1);
-        imageIds.add(R.drawable.card_1);
-        imageIds.add(R.drawable.card_1);
-        imageIds.add(R.drawable.card_1);
-        imageIds.add(R.drawable.card_1);
-        imageIds.add(R.drawable.card_1);
-        imageIds.add(R.drawable.card_1);
-        imageIds.add(R.drawable.card_1);
-        imageIds.add(R.drawable.card_1);
-        imageIds.add(R.drawable.card_1);
-        imageIds.add(R.drawable.card_1);
-        imageIds.add(R.drawable.card_1);
-        imageIds.add(R.drawable.card_1);
-        imageIds.add(R.drawable.card_1);
-        imageIds.add(R.drawable.card_1);
-        imageIds.add(R.drawable.card_1);
-        imageIds.add(R.drawable.card_1);
-    }
+        imageIds.add(R.drawable.card_31);
+        imageIds.add(R.drawable.card_32);
+        imageIds.add(R.drawable.card_33);
+        imageIds.add(R.drawable.card_34);
+        imageIds.add(R.drawable.card_35);
+        imageIds.add(R.drawable.card_36);
+        imageIds.add(R.drawable.card_37);
+        imageIds.add(R.drawable.card_38);
+        imageIds.add(R.drawable.card_39);
+        imageIds.add(R.drawable.card_40);
+        imageIds.add(R.drawable.card_41);
+        imageIds.add(R.drawable.card_42);
+        imageIds.add(R.drawable.card_43);
+        imageIds.add(R.drawable.card_44);
+        imageIds.add(R.drawable.card_45);
+        imageIds.add(R.drawable.card_46);
+        imageIds.add(R.drawable.card_47);
+        imageIds.add(R.drawable.card_48);
+        imageIds.add(R.drawable.card_49);
+        imageIds.add(R.drawable.card_50);
+        imageIds.add(R.drawable.card_51);
+        imageIds.add(R.drawable.card_52);
+}
     
     public PlayingCard(int suit, int rank) {
         super(suit, rank);
