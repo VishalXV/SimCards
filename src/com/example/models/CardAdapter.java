@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,6 +46,7 @@ public class CardAdapter extends ArrayAdapter<Card> {
 
         // get the TextView and then set the text (item name) and tag (item ID) values
         ImageView imageViewItem = (ImageView) convertView.findViewById(R.id.cardViewItem);
+        Log.i("ImageId", "" + card.getImageId());
         imageViewItem.setImageResource(card.getImageId());
 
         return convertView;
